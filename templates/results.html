@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Comment Clustering Results</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f2f2f2;
+                    color: #333333;
+                    margin: 0;
+                    padding: 20px;
+                }
+
+                h1, h2 {
+                    color: #0056b3;
+                }
+
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+                }
+
+                .cluster-number {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background-color: #0056b3;
+                    color: #ffffff;
+                    text-align: center;
+                    line-height: 40px;
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 20px;
+                }
+
+                th, td {
+                    padding: 10px;
+                    text-align: left;
+                    border-bottom: 1px solid #dddddd;
+                }
+
+                th {
+                    background-color: #0056b3;
+                    color: #ffffff;
+                }
+
+                .comment-row:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                .comment-row:hover {
+                    background-color: #e6e6e6;
+                }
+
+                .link-row:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+
+                .link-row:hover {
+                    background-color: #e6e6e6;
+                }
+                .tables-container {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20px;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>welcome to your community</h1>
+            <h2>Number of Clusters: <span class="cluster-number">{{ cluster_number }}</span></h2>
+
+            <h2>Comments:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for comment in comments %}
+                    <tr class="comment-row">
+                        <td>{{ comment }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <h2>links:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for link in links %}
+                    <tr class="link-row">
+                        <td>{{ link }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </body>
+        
+    </html>
